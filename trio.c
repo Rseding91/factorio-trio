@@ -3163,7 +3163,8 @@ TRIO_ARGS6((self, number, flags, width, precision, base),
 	     * Scaling is done it two steps to avoid problems with subnormal
 	     * numbers.
 	     */
-	    workNumber /= TrioPower(dblBase, (trio_long_double_t)(exponent / 2));
+      workNumber = number;
+      workNumber /= TrioPower(dblBase, (trio_long_double_t)(exponent / 2));
 	    workNumber /= TrioPower(dblBase, (trio_long_double_t)(exponent - (exponent / 2)));
 	  }
 	  number = workNumber;
