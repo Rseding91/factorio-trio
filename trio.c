@@ -404,11 +404,8 @@ typedef trio_longlong_t trio_int64_t;
 
 #endif
 
-extern double factorioLog10(double);
-extern double factorioPow(double, double);
-
-#define trio_pow(x,y) factorioPow(x, y)
-#define trio_log10(x) factorioLog10(x)
+extern double trio_log10(double);
+extern double trio_pow(double, double);
 
 #if TRIO_FEATURE_FLOAT
 # define TRIO_FABS(x) (((x) < 0.0) ? -(x) : (x))
