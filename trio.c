@@ -388,6 +388,8 @@ typedef trio_longlong_t trio_int64_t;
 # define trio_fmod(x,y) fmod((double)(x),(double)(y))
 #endif
 
+#if 0
+
 #if defined(HAVE_POWL)
 # define trio_pow(x,y) powl((x),(y))
 #else
@@ -399,6 +401,14 @@ typedef trio_longlong_t trio_int64_t;
 #else
 # define trio_log10(x) log10((double)(x))
 #endif
+
+#endif
+
+extern double factorioLog10(double);
+extern double factorioPow(double, double);
+
+#define trio_pow(x,y) factorioPow(x, y)
+#define trio_log10(x) factorioLog10(x)
 
 #if TRIO_FEATURE_FLOAT
 # define TRIO_FABS(x) (((x) < 0.0) ? -(x) : (x))
